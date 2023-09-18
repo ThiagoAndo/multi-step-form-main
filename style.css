@@ -1,0 +1,597 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  background-color: #bfe2fd88;
+  font-size: 16px;
+}
+h1 {
+  color: hsl(213, 96%, 18%);
+}
+#container {
+  display: grid;
+  grid-template-columns: 17.5px 340px 17.5px;
+  grid-template-rows: 106px 73px 400px 65px;
+  width: 375px;
+  margin: auto;
+}
+#header {
+  grid-area: 1/ 1/ 3/ 4;
+  margin-top: 7px;
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  display: flex;
+  justify-content: center;
+}
+#header > div {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  justify-content: space-around;
+}
+.pNum {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px hsl(231, 100%, 99%);
+  color: hsl(231, 100%, 99%);
+  border-radius: 20px;
+  margin-top: 30px;
+}
+#content {
+  grid-area: 2/ 2/ 4/ 3;
+  overflow: hidden;
+  position: relative;
+}
+.holdLabel {
+  width: 272px;
+  margin: auto;
+  padding-top: 25px;
+}
+.par {
+  line-height: 1.5em;
+  padding: 5px 0px 18px;
+  color: hsl(231, 11%, 63%);
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+}
+.attribution {
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+  width: 375px;
+  margin: auto;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*========================================*/
+/****************** Form *****************/
+#resform > input {
+  display: block;
+  width: 272px;
+  height: 38px;
+  margin: auto;
+  padding: 5px;
+  margin-bottom: 20px;
+  border: solid 1px hsl(229, 24%, 87%);
+  border-radius: 4px;
+  font-weight: 600;
+}
+#resform > label {
+  display: block;
+  width: 80%;
+  margin: auto;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+.formCont {
+  width: 340px;
+  height: 368px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  box-shadow: 0px 3px 21px -17px;
+}
+/****************** End of Form ******************/
+/*==============================================*/
+/****************** Plans Cont *****************/
+#planCont {
+  width: 340px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  box-shadow: 0px 3px 21px -17px;
+}
+#planCont .planPar {
+  line-height: 1.5em;
+  padding: 5px 0px 0px;
+  color: hsl(231, 11%, 63%);
+}
+.planType {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 5px;
+  width: 272px;
+  margin: auto;
+  margin-top: 10px;
+  border: solid 1px hsl(229, 24%, 87%);
+  border-radius: 7px;
+  padding: 10px 0px 10px;
+  cursor: pointer;
+}
+.planType div:first-of-type {
+  width: 50px;
+  margin-left: 15px;
+}
+.info div:first-of-type img {
+  width: 70%;
+}
+.planType .txt {
+  line-height: 20px;
+}
+.planType .txt p:first-of-type {
+  font-weight: 600;
+}
+.planType .txt p:nth-child(2) {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.8rem;
+}
+.yerlyVisible {
+  font-size: 0.7rem;
+  color: hsl(213, 96%, 18%);
+  line-height: 20px;
+  display: none;
+}
+#border {
+  width: 270px;
+  height: 20px;
+  margin: 0;
+}
+/****************** End of Plans Cont *****************/
+/*===================================================*/
+/****************** Btn Montthly  || Yearly *********/
+#planCont > #holdBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 272px;
+  margin: auto;
+  margin-top: 15px;
+  height: 50px;
+  background-color: hsl(217, 100%, 97%);
+  border-radius: 7px;
+}
+#planCont > #holdBtn > #btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: hsl(213, 96%, 18%);
+  cursor: pointer;
+}
+#planCont > #holdBtn > #btn > div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  background-color: hsl(0, 0%, 100%);
+  transition: margin-left 0.3s linear;
+}
+.trans {
+  margin-left: 5px;
+}
+.textColor {
+  font-weight: 600;
+  color: hsl(213, 96%, 18%);
+}
+/****************** End of Btn *************************/
+/*====================================================*/
+/****************** Pick adds-on *********************/
+.planType > div:first-of-type > input {
+  margin-top: 9px;
+  margin-left: 3px;
+  width: 23px;
+  height: 21px;
+}
+.planType > div:last-of-type > .prc {
+  line-height: 40px;
+  font-size: 0.8rem;
+  color: hsl(243, 100%, 62%);
+  margin: auto;
+  text-align: center;
+}
+.planType {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+.addOn > .planType > .cheBox {
+  width: 30px;
+}
+.addOn > .planType > .cheBox input {
+  cursor: pointer;
+}
+.addOn > .planType .txt {
+  line-height: 20px;
+}
+.addOn > .planType .txt p:first-of-type {
+  font-size: 0.8rem;
+}
+.addOn > .planType .txt p:last-of-type {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.65rem;
+}
+/****************** End adds-on *************************/
+/*=====================================================*/
+/****************** Finishing Up **********************/
+#fUp > .planType {
+  grid-template-columns: 3fr 1fr;
+  cursor: default;
+}
+#fUp > .planType > .txt {
+  width: auto;
+}
+#change {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: hsl(231, 11%, 63%);
+}
+#fUp > .planType > .txt .fTxt {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+#arcade {
+  font-size: 0.9rem;
+}
+#fUp > .planType > .txt > .lht {
+  font-size: 0.9rem;
+}
+#fUp > .lh > div:last-of-type .prc {
+  line-height: 20px;
+}
+#finalOne,
+#finalTwo {
+  font-weight: 600;
+}
+#fUp > div:last-of-type > #finalTwo {
+  font-size: 1.3rem;
+  line-height: 20px;
+}
+#finalOne {
+  color: black;
+}
+#fUp > .planType {
+  background-color: hsl(217, 100%, 97%);
+}
+
+#fUp > #totalP {
+  background-color: hsl(0, 0%, 100%);
+  border: hsl(0, 0%, 100%);
+}
+#fUp > .planType {
+  margin-top: 0px;
+  border: hsl(0, 0%, 100%);
+  border-radius: 0px;
+}
+#fUp > div:nth-child(2) {
+  border-radius: 7px 7px 0 0;
+  border-bottom: solid 1px hsl(229, 24%, 87%);
+}
+
+#fUp > div:nth-child(5) {
+  border-radius: 0 0 7px 7px;
+}
+/****************** End Finishing Up ********************/
+/*=====================================================*/
+/****************** Thank you Page ********************/
+#finishd > img {
+  display: block;
+  width: 80px;
+  margin: auto;
+  padding-top: 70px;
+}
+#finishd > .holdLabel > h1 {
+  text-align: center;
+}
+#finishd > .holdLabel > .par {
+  font-size: 0.9rem;
+  text-align: center;
+}
+/****************** End Thank you Page **************/
+/*=================================================*/
+/****************** Botton Section*****************/
+
+.botton {
+  grid-area: 4/ 1/ 5/ 4;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.botton span {
+  width: 90px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  line-height: 35px;
+  color: hsl(231, 11%, 63%);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.botton span:first-of-type {
+  color: hsl(0, 0%, 100%);
+}
+.botton span:last-of-type {
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  margin-right: 10px;
+}
+/******************End of Botton Section*****************/
+.pageNum {
+  background-color: hsl(206, 94%, 87%);
+  color: black;
+}
+.print {
+  font-family: sans-serif;
+  position: absolute;
+  width: 375px;
+  min-height: 100px;
+  margin: auto;
+  color: black;
+  border-radius: 10px;
+  top: -200px;
+  background-color:darkgray;
+  border: ridge 2px black;
+  z-index: 150;
+  transition: 1.5s;
+  transition-timing-function: ease;
+}
+.print h3 {
+  width: 90%;
+  font-size: 1.4rem;
+  margin: auto;
+  margin-top: 20px;
+  padding: 35px;
+  text-align: justify;
+  line-height: 35px;
+}
+.print div {
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  position: absolute;
+  background-image: url("./assets/images/icons8-close-window-48.png");
+  background-position: center;
+  cursor: pointer;
+}
+/******************JS Dom Manipulation*****************/
+.message {
+  display: flex;
+  top: 250px;
+  z-index: 100;
+  opacity: 100;
+}
+.blockFrom {
+  position: absolute;
+  width: 375px;
+  height: 647px;
+  z-index: 30;
+  background-color: rgba(0, 0, 0, 0.562);
+  transition: 0.3s;
+}
+.display {
+  display: none;
+}
+.transEfect {
+  margin-left: 25px;
+}
+.bcolor {
+  background-color: hsl(206, 94%, 87%);
+  border: solid 2px hsl(243, 100%, 62%);
+}
+.dcolor {
+  background-color: hsl(206, 94%, 87%);
+  border-color: hsl(243, 100%, 62%);
+}
+.color {
+  color: hsl(231, 11%, 63%);
+}
+/******************End of JS Dom Manipulation*****************/
+
+@media (min-width: 440px) and (max-width: 1600px) {
+  #container {
+    background-color: hsl(0, 0%, 100%);
+    width: 900px;
+    height: 600px;
+    grid-template-columns: 350px 550px;
+    grid-template-rows: 500px 100px;
+    margin-top: 20px;
+  }
+  #header {
+    margin-top: 15px;
+    margin-left: 15px;
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    grid-area: 1/ 1/ 5/ 2;
+  }
+  #header > div {
+    display: block;
+    margin-right: 70px;
+    margin-top: 20px;
+  }
+  .onliDesk {
+    margin-left: 10px;
+  }
+  .pNum {
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+  }
+  .row {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+  }
+  .onliDesk p:first-of-type {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-weight: 100;
+    color: hsla(0, 0%, 100%, 0.459);
+  }
+  .onliDesk p:last-of-type {
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+  }
+  #content {
+    margin-top: 15px;
+    margin-left: 50px;
+    display: grid;
+    overflow: hidden;
+    grid-area: 1/ 2/ 2 / 3;
+  }
+  .formCont {
+    width: 500px;
+    height: 500px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  .holdLabel {
+    width: 500px;
+  }
+  .holdLabel p {
+    margin-top: 15px;
+  }
+
+  #resform > input {
+    width: 450px;
+    height: 50px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+  #resform > label:first-of-type {
+    margin-top: 30px;
+  }
+  #resform > label {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: hsl(213, 96%, 18%);
+    font-weight: 600;
+  }
+  ::placeholder {
+    color: hsl(231, 11%, 63%);
+  }
+  #planCont {
+    width: 500px;
+    box-shadow: 0px 0px 0px 0px;
+  }
+  #planDesk {
+    width: 450px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  #planDesk .value {
+    width: 125px;
+    height: 175px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0;
+  }
+  #planDesk .pDesk {
+    width: 75px;
+  }
+  #planDesk .value div:first-of-type {
+    margin-left: 0px;
+  }
+  #planDesk .value div {
+    margin-right: 25px;
+  }
+  #planCont > #holdBtn {
+    width: 450px;
+    margin-right: 50px;
+  }
+  ul {
+    gap: 0px;
+  }
+  .addOn > .planType {
+    width: 400px;
+    margin-top: 10px;
+  }
+  .planType {
+    grid-template-columns: 0.75fr 3fr 1fr;
+    margin-right: 100px;
+  }
+  .botton {
+    height: 60px;
+    margin-top: 0;
+    grid-area: 2/ 2/ 3 / 3;
+  }
+  .botton span {
+    width: 105px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+  }
+  .botton span:first-of-type {
+    color: hsl(0, 0%, 100%);
+    margin-left: 50px;
+  }
+  .botton span:last-of-type {
+    background-color: hsl(213, 96%, 18%);
+    color: hsl(0, 0%, 100%);
+    margin-right: 50px;
+  }
+  .print {
+    width: 400px;
+    left: 40%;
+  }
+  #finishd {
+    width: 500px;
+    margin: auto;
+  }
+  #finishd img {
+    margin-top: 100px;
+    margin-right: 260px;
+  }
+  #finishd .holdLabel .h1,
+  .par {
+    padding-right: 110px;
+  }
+
+  .blockFrom {
+    width: 900px;
+  }
+  .attribution {
+    width: 900px;
+    margin: auto;
+    margin-top: 12px;
+  }
+}
