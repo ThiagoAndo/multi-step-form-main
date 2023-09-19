@@ -35,7 +35,6 @@ import { printMessagge } from "./utils/printMessage.js";
 import { bntsEvt } from "./utils/next&backbtn.js";
 import { changePar } from "./utils/variables.js";
 
-import { interval } from "./utils/myInterval.js";
 let choseCheck = [];
 let doneResizing = null;
 bntsEvt();
@@ -138,7 +137,7 @@ planBtn.onclick = () => {
     });
     changePrice();
 
-    interval({ click2: 2 });
+    changePar({ click2: 2 });
   } else if (click2 == 2) {
 
     console.log("entro 1 " + click2);
@@ -150,7 +149,7 @@ planBtn.onclick = () => {
       p.style.display = "none";
     });
     changePrice();
-    interval({ click2: 1 });
+    changePar({ click2: 1 });
   }
   function changePrice() {
     let prcs = [];

@@ -1,3 +1,7 @@
+/* In this module I have added the interaction of the Monthly or
+ Yearly, next, back buttons. Also, the linck change that is 
+ located on the last step of the form.  */
+
 import {
   btn,
   form,
@@ -30,69 +34,80 @@ export const bntsEvt = () => {
     }
   }
 
-  const myCondition = () => {
-    if (click == formLen.length - 2) {
-      btn.innerHTML = "Confirm";
-      btn.style.backgroundColor = "hsl(243, 100%, 62%)";
-      setFinalPrice();
-    } 
-    if (click == 3 && !myCheck()) {
-      alert("entrou");
-      printMessagge(
-        "Are you sure you do not want to enhance your gaming experience?"
-      );
-    } 
-    if (click >= 2) {
-      backBtn();
-      btn2.style.color = "hsl(231, 11%, 63%)";
-    }  if (click > 0 && click < 2) {
-      planType[0].classList.add("bcolor");
-      changePar({ pickPrice: planType[0].getAttribute("value") });
-      changePar({
-        planBcolor: document.querySelector(".bcolor .txt p:first-of-type"),
-      });
+  const myConditionNextBtn = () => {
+    switch (click) {
+      case 1:
+        planType[0].classList.add("bcolor");
+        changePar({ pickPrice: planType[0].getAttribute("value") });
+        changePar({
+          planBcolor: document.querySelector(".bcolor .txt p:first-of-type"),
+        });
+        break;
+      case 2:
+        backBtn();
+        btn2.style.color = "hsl(231, 11%, 63%)";
+        break;
+      case 3:
+        myCheck() == false? printMessagge("Are you sure you do not want to enhance your gaming experience?"):
+        btn.innerHTML = "Confirm";
+        btn.style.backgroundColor = "hsl(243, 100%, 62%)";
+        setFinalPrice();
+        break;
+      default:
+        console.log("Something went wrong!");
     }
+  };
+
+  function myConditionBackBtn() {
+    switch (click) {
+      case 1:
+        btn2.style.color = "hsl(0, 0%, 100%)";
+        btn2.removeEventListener("click", myConditionBackBtn);
+        break;
+      case 2:
+        setValBackBtn();
+        break;
+      case 3:
+        setValBackBtn();
+        btn.innerHTML = "Next Step";
+        btn.style.backgroundColor = "hsl(213, 96%, 18%)";
+        break;
+      default:
+        console.log("Something went wrong!");
+    }
+  }
+  const setValNextBtn = () => {
+    changePar({ click: click + 1 });
+    changePar({ left: left + leftL });
+    form.style.left = "-" + `${left}` + "px";
+  };
+
+  const setValBackBtn = () => {
+    changePar({ left: left - leftL });
+    form.style.left = "-" + `${left}` + "px";
+    changePar({ click: click - 1 });
+    pageNumBackGround(click, 2);
   };
 
   btn.onclick = () => {
     if (click < formLen.length - 2 && true) {
-      console.log(click);
       pageNumBackGround(click, 1);
-      changePar({ click: click + 1 });
-      changePar({ left: left + leftL });
-      form.style.left = "-" + `${left}` + "px";
-      myCondition();
+      setValNextBtn();
+      myConditionNextBtn();
     } else if (click > 0 && click < formLen.length - 1) {
-      changePar({ left: left + leftL });
-      form.style.left = "-" + `${left}` + "px";
+      setValNextBtn();
       btnSection.className = "display";
-      click++;
     }
   };
+
   function backBtn() {
-    btn2.addEventListener("click", backBtnPart2);
+    btn2.addEventListener("click", myConditionBackBtn);
   }
+
   finalChange.onclick = (event) => {
     event.preventDefault();
     for (var i = 0; i < 2; i++) {
-      backBtnPart2();
+      myConditionBackBtn();
     }
   };
-  function backBtnPart2() {
-    if (click >= 1) {
-      changePar({ left: left - leftL });
-      form.style.left = "-" + `${left}` + "px";
-      changePar({ click: click - 1 });
-
-      pageNumBackGround(click, 2);
-    }
-    if (click < 2) {
-      btn2.style.color = "hsl(0, 0%, 100%)";
-      btn2.removeEventListener("click", backBtnPart2);
-    }
-    if (click == 2) {
-      btn.innerHTML = "Next Step";
-      btn.style.backgroundColor = "hsl(213, 96%, 18%)";
-    }
-  }
 };
