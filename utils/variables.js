@@ -32,3 +32,28 @@ export const priceRangeYearAdds = ["$10/yr", "$20/yr", "$20/yr"];
 export const priceRangeMonthAdds = ["$1/mo", "$2/mo", "$2/mo"];
 export  const steps = document.querySelectorAll(".onliDesk");
 export  const x = window.matchMedia("(max-width: 441px)");
+export let left = 0;
+export let click = 0;
+export let click2 = 1;
+export let leftL = 500;
+export let pickPrice = null;
+export let planBcolor = "Arcade";
+// let choseCheck = [];
+export let mORy = "mo";
+export let myVAlue = 0;
+// let doneResizing = null;
+export let last = "(Montly)";
+
+export const changePar = (obj = {}) => {
+  left = obj.left || left;
+  click = obj.click || click;
+  click2 = obj.click2 || click2;
+  leftL = obj.leftL || leftL;
+  pickPrice = obj.pickPrice || pickPrice;
+  planBcolor = obj.planBcolor || planBcolor;
+  mORy = obj.mORy || mORy;
+  myVAlue = obj.myVAlue || myVAlue;
+  last = obj.last || last;
+  //   doneResizing = obj.doneResizing || doneResizing;
+  //   choseCheck = obj.choseCheck || choseCheck;
+};

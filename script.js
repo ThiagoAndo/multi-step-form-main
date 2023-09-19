@@ -21,19 +21,23 @@ import {
   priceRangeMonthAdds,
   steps,
   x,
+  click,
+  click2,
+  left,
+  leftL,
+  pickPrice,
+  planBcolor,
+  mORy,
+  myVAlue,
+  last,
 } from "./utils/variables.js";
 import { printMessagge } from "./utils/printMessage.js";
-import { bntsEvt, click,  left, leftL } from "./utils/next&backbtn.js";
+import { bntsEvt } from "./utils/next&backbtn.js";
+import { changePar } from "./utils/variables.js";
+
+import { interval } from "./utils/myInterval.js";
 let choseCheck = [];
-let mORy = "mo";
-let myVAlue;
 let doneResizing = null;
-let planBcolor = "Arcade";
-let last = "(Montly)";
-let thisLeft = left;
-let thisLeftL = leftL;
-let pickPrice = null;
-let click2 = 0;
 bntsEvt();
 //   Information Box ===============================================
 
@@ -73,8 +77,8 @@ export function formValidation() {
     }
   }
   function checkName() {
-    myVAlue = formVal[0].value;
-    var condition = myVAlue.indexOf(" ") < 0;
+    changePar({ myVAlue: formVal[0].value });
+    let condition = myVAlue.indexOf(" ") < 0;
     if (!condition) {
       return true;
     } else {
@@ -82,6 +86,7 @@ export function formValidation() {
     }
   }
   function checkEamil() {
+    changePar({ myVAlue: formVal[0].value });
     myVAlue = formVal[1].value;
     const pass = myVAlue.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
     if (pass) {
@@ -123,7 +128,8 @@ planBtn.onclick = () => {
     disp.classList.add("display");
     box.classList.remove("dcolor");
   });
-  if (click2 == 0) {
+  if (click2 == 1) {
+    console.log("entro 0");
     planBtnInside.classList.add("transEfect");
     monthly.classList.add("color");
     yerly.classList.remove("color");
@@ -131,25 +137,39 @@ planBtn.onclick = () => {
       p.style.display = "block";
     });
     changePrice();
+
+    interval({ click2: 2 });
+  } else if (click2 == 2) {
+
+    console.log("entro 1 " + click2);
+
+    planBtnInside.classList.remove("transEfect");
+    monthly.classList.remove("color");
+    yerly.classList.add("color");
+    visible.forEach((p) => {
+      p.style.display = "none";
+    });
+    changePrice();
+    interval({ click2: 1 });
   }
   function changePrice() {
     let prcs = [];
     let prcsAdd = [];
     let prcTimes = 0;
     switch (click2) {
-      case 0:
+      case 1:
         prcs = priceRangeYear;
         prcsAdd = priceRangeYearAdds;
         prcTimes = 10;
-        mORy = "yr";
-        last = "(Yerly)";
+        changePar({ mORy: "yr" });
+        changePar({ last: "(Yerly)"});
         break;
       default:
         prcs = priceRangeMonth;
         prcsAdd = priceRangeMonthAdds;
         prcTimes = 0.1;
-        mORy = "mo";
-        last = "(Montly)";
+        changePar({ mORy: "mo"});
+        changePar({ last: "(Montly)"});
     }
     for (var i = 0; i <= 2; i++) {
       price[i].innerHTML = prcs[i];
@@ -165,20 +185,14 @@ planBtn.onclick = () => {
       );
     }
   }
-  if (click2 == 1) {
-    planBtnInside.classList.remove("transEfect");
-    monthly.classList.remove("color");
-    yerly.classList.add("color");
-    visible.forEach((p) => {
-      p.style.display = "none";
-    });
-    changePrice();
-  }
-  click2++;
-  if (click2 == 2) click2 = 0;
+
   planType[0].classList.add("bcolor");
-  pickPrice = planType[0].getAttribute("value");
-  planBcolor = document.querySelector(".bcolor .txt p:first-of-type");
+  changePar({ pickPrice: planType[0].getAttribute("value")});
+  changePar(
+    {
+      planBcolor: document.querySelector(".bcolor .txt p:first-of-type")
+    }
+  );
 };
 
 (function () {
@@ -188,9 +202,8 @@ planBtn.onclick = () => {
       for (var i = 0; i < planType.length; i++) {
         planType[i].classList.remove("bcolor");
       }
-      pickPrice = this.getAttribute("value");
+      changePar({ pickPrice: this.getAttribute("value") });
       plan.classList.add("bcolor");
-      planBcolor = document.querySelector(".bcolor .txt p:first-of-type");
     });
   });
 })();
@@ -240,18 +253,20 @@ responsive(x);
 function responsive(maxWidth) {
   if (maxWidth.matches) {
     displayTxt("none");
-    thisLeftL = 350;
+    changePar({ leftL: 350 });
+
     resizing();
   } else {
     displayTxt("block");
-    thisLeftL = 500;
+    changePar({ leftL: 500 });
+
     resizing();
   }
 }
 
 function resizing() {
-  thisLeft = click * thisLeftL;
-  form.style.left = "-" + click * thisLeftL + "px";
+  changePar({ left: click * leftL });
+  form.style.left = "-" + click * leftL + "px";
 }
 function displayTxt(dis) {
   steps.forEach((step) => {
