@@ -14,9 +14,8 @@ import {
   left,
   leftL,
   click,
-  pickPrice,
-  planBcolor,
   changePar,
+  msg5,
 } from "./variables.js";
 import { pageNumBackGround } from "./NumberBackColor.js";
 import { formValidation } from "./formValidation.js";
@@ -48,8 +47,7 @@ export const bntsEvt = () => {
         btn2.style.color = "hsl(231, 11%, 63%)";
         break;
       case 3:
-        myCheck() == false? printMessagge("Are you sure you do not want to enhance your gaming experience?"):
-        btn.innerHTML = "Confirm";
+        myCheck() == false ? printMessagge(msg5) : (btn.innerHTML = "Confirm");
         btn.style.backgroundColor = "hsl(243, 100%, 62%)";
         setFinalPrice();
         break;
@@ -58,7 +56,7 @@ export const bntsEvt = () => {
     }
   };
 
-  function myConditionBackBtn() {
+  const  myConditionBackBtn =()=> {
     switch (click) {
       case 1:
         btn2.style.color = "hsl(0, 0%, 100%)";
@@ -90,7 +88,7 @@ export const bntsEvt = () => {
   };
 
   btn.onclick = () => {
-    if (click < formLen.length - 2 && formValidation()) {
+    if (click < formLen.length - 2 && true) {
       pageNumBackGround(click, 1);
       setValNextBtn();
       myConditionNextBtn();
@@ -100,7 +98,7 @@ export const bntsEvt = () => {
     }
   };
 
-  function backBtn() {
+  const backBtn = ()=> {
     btn2.addEventListener("click", myConditionBackBtn);
   }
 

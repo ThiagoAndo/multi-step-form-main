@@ -42,6 +42,8 @@ export const msg1 = "Make sure to fill in Your Name and Surname.";
 export const msg2 = "Make sure to enter a valid email.";
 export const msg3 = "Make sure to enter a valid Phone Number.";
 export const msg4 = "Make sure to fill in the form.";
+export const msg5 =
+  "Are you sure you do not want to enhance your gaming experience?";
 export let testPho = false;
 export let confIndex = false;
 export let left = 0;
@@ -58,7 +60,7 @@ export let checkReturn = true;
 export let pass = false;
 export let myReturn = [false, false, false];
 let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-// let choseCheck = [];
+export let choseCheck = [];
 // let doneResizing = null;
 
 export const changePar = (obj = {}) => {
