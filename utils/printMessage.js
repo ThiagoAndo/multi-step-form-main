@@ -1,10 +1,12 @@
 //Adding functionality to box message when the form is not fill in properly
-import { formVal, infoBox, infoBoxMess, block } from "./variables.js";
+import { formVal, infoBox, infoBoxMess, block, myReturn } from "./variables.js";
 
 export const printMessagge = (msg, num) => {
   infoBox.classList.add("message");
   block.classList.add("blockFrom");
   infoBoxMess.innerHTML = msg;
+  myReturn[num] = false;
+
   setTimeout(() => {
     window.addEventListener("click", evtCloseScreen);
   }, 500);
@@ -12,7 +14,7 @@ export const printMessagge = (msg, num) => {
     window.removeEventListener("click", evtCloseScreen);
   };
 
-  function evtCloseScreen() {
+  const  evtCloseScreen = () => {
     infoBox.className = "print";
     block.classList.remove("blockFrom");
     if (num != undefined) {

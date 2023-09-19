@@ -3,7 +3,6 @@
 import {
   monthly,
   form,
-  formVal,
   addPrice,
   planBtn,
   finalPrice,
@@ -28,89 +27,18 @@ import {
   pickPrice,
   planBcolor,
   mORy,
-  myVAlue,
   last,
 } from "./utils/variables.js";
-import { printMessagge } from "./utils/printMessage.js";
+
 import { bntsEvt } from "./utils/next&backbtn.js";
 import { changePar } from "./utils/variables.js";
 
 let choseCheck = [];
 let doneResizing = null;
 bntsEvt();
-//   Information Box ===============================================
 
-//   Information Box ==============================================
-//   Next step and Go back buttons ================================
 
-//  End of  Next step and Go back buttons ================================
-//  Form Validation ======================================================
-export function formValidation() {
-  if (click > 0) {
-    return true;
-  }
-  let emp = [];
-  for (var i = 0; i < formVal.length; i++) {
-    if (formVal[i].value == "") {
-      emp.push(formVal[i].value);
-    }
-  }
-  empty();
-  function empty() {
-    if (
-      formVal[0].value == "" &&
-      formVal[1].value == "" &&
-      formVal[2].value == ""
-    ) {
-      printMessagge("Make sure to fill in the form.");
-    } else {
-      checkEmpty();
-    }
-  }
-  function checkEmpty() {
-    for (var i = 0; i < formVal.length; i++) {
-      if (formVal[i].value == "") {
-        printMessagge("Make sure to fill in your " + formVal[i].name + ".", i);
-        break;
-      }
-    }
-  }
-  function checkName() {
-    changePar({ myVAlue: formVal[0].value });
-    let condition = myVAlue.indexOf(" ") < 0;
-    if (!condition) {
-      return true;
-    } else {
-      printMessagge("Make sure to fill in Your Name and Surname.", 0);
-    }
-  }
-  function checkEamil() {
-    changePar({ myVAlue: formVal[0].value });
-    myVAlue = formVal[1].value;
-    const pass = myVAlue.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-    if (pass) {
-      return true;
-    } else {
-      printMessagge("Make sure to enter a valid email.", 1);
-    }
-  }
-  function checkNumber() {
-    let valueExp = new RegExp(
-      "^\\+[3]{1}[5]{1}[3]{1}-[0-9]{2}-[0-9]{3}-[0-9]{4}$"
-    );
-    if (valueExp.test(formVal[2].value)) {
-      return true;
-    } else {
-      printMessagge("Make sure to enter a valid Phone Number.", 2);
-    }
-  }
-  if (emp.length == 0) {
-    if (checkName() && checkEamil() && checkNumber()) {
-      return true;
-    }
-  }
-}
-//  End of Form Validation ======================================================
+
 //  Plans Type (month or Year)===================================================
 planBtn.onclick = () => {
   for (var i = 0; i < planType.length; i++) {

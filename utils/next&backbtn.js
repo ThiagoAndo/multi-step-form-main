@@ -16,12 +16,12 @@ import {
   click,
   pickPrice,
   planBcolor,
+  changePar,
 } from "./variables.js";
 import { pageNumBackGround } from "./NumberBackColor.js";
-import { formValidation } from "../script.js";
+import { formValidation } from "./formValidation.js";
 import { printMessagge } from "./printMessage.js";
 import { setFinalPrice } from "../script.js";
-import { changePar } from "./variables.js";
 
 export const bntsEvt = () => {
   function myCheck() {
@@ -90,7 +90,7 @@ export const bntsEvt = () => {
   };
 
   btn.onclick = () => {
-    if (click < formLen.length - 2 && true) {
+    if (click < formLen.length - 2 && formValidation()) {
       pageNumBackGround(click, 1);
       setValNextBtn();
       myConditionNextBtn();
