@@ -1,11 +1,8 @@
 //  Plans Type (month or Year)===================================================
 
 import {
-  monthly,
   addPrice,
   planBtn,
-  planBtnInside,
-  yerly,
   price,
   visible,
   planType,
@@ -18,12 +15,13 @@ import {
   priceRangeMonthAdds,
   click2,
   choseCheck,
+  prcTimes,
+  myObj,
 } from "./variables.js";
 import { changePar } from "./variables.js";
+
 export const yearOrMonth = () => {
-  let prcs = [];
-  let prcsAdd = [];
-  let prcTimes = 0;
+  changePar({ prcTimes: 0 });
   planBtn.onclick = () => {
     for (var i = 0; i < planType.length; i++) {
       planType[i].classList.remove("bcolor");
@@ -39,12 +37,24 @@ export const yearOrMonth = () => {
       disp.classList.add("display");
       box.classList.remove("dcolor");
     });
-
+    const returObj = () => {
+      if (click2 === 1) {
+        return {
+          priceRangeYear,
+          priceRangeYearAdds,
+        };
+      } else {
+        return {
+          priceRangeMonth,
+          priceRangeMonthAdds,
+        };
+      }
+    };
     const changeVAlue = () => {
       for (var i = 0; i <= 2; i++) {
-        price[i].innerHTML = prcs[i];
-        addPrice[i].innerHTML = prcsAdd[i];
-        finalSum[i].innerHTML = prcsAdd[i];
+        price[i].innerHTML = Object.values(returObj())[0][i];
+        addPrice[i].innerHTML = Object.values(returObj())[1][i];
+        finalSum[i].innerHTML = Object.values(returObj())[1][i];
         planType[i].setAttribute(
           "value",
           planType[i].getAttribute("value") * prcTimes
@@ -55,41 +65,44 @@ export const yearOrMonth = () => {
         );
       }
     };
+    const changeClases = (obj = {}, par, condition) => {
+      for (var i = 0; i <= 2; i++) {
+        if (condition <= 3 && condition >= 2) {
+          obj[i][i].classList.add(obj[i][i + 1]);
+          condition--;
+        } else {
+          obj[i][i].classList.remove(obj[i][i + 1]);
+          condition--;
+          condition--;
+        }
+      }
+      visible.forEach((p) => {
+        p.style.display = par;
+      });
+    };
 
-    if (click2 == 1) {
-      planBtnInside.classList.add("transEfect");
-      monthly.classList.add("color");
-      yerly.classList.remove("color");
-      visible.forEach((p) => {
-        p.style.display = "block";
-      });
-      changePrice();
-      changePar({ click2: 2 });
-    } else if (click2 == 2) {
-      planBtnInside.classList.remove("transEfect");
-      monthly.classList.remove("color");
-      yerly.classList.add("color");
-      visible.forEach((p) => {
-        p.style.display = "none";
-      });
-      changePrice();
-      changePar({ click2: 1 });
-    }
+    (function () {
+      if (click2 == 1) {
+        changeClases(myObj, "block", 3);
+        changePrice();
+        changePar({ click2: 2 });
+      } else {
+        changeClases(myObj, "none", 7);
+        changePrice();
+        changePar({ click2: 1 });
+      }
+    })();
 
     function changePrice() {
       switch (click2) {
         case 1:
-          prcs = priceRangeYear;
-          prcsAdd = priceRangeYearAdds;
-          prcTimes = 10;
+          changePar({ prcTimes: 10 });
           changePar({ mORy: "yr" });
           changePar({ last: "(Yerly)" });
           changeVAlue();
           break;
         case 2:
-          prcs = priceRangeMonth;
-          prcsAdd = priceRangeMonthAdds;
-          prcTimes = 0.1;
+          changePar({ prcTimes: 0.1 });
           changePar({ mORy: "mo" });
           changePar({ last: "(Montly)" });
           changeVAlue();
@@ -98,11 +111,12 @@ export const yearOrMonth = () => {
           console.log("Something went wrong");
       }
     }
-
-    planType[0].classList.add("bcolor");
-    changePar({ pickPrice: planType[0].getAttribute("value") });
-    changePar({
-      planBcolor: document.querySelector(".bcolor .txt p:first-of-type"),
-    });
+    (function () {
+      planType[0].classList.add("bcolor");
+      changePar({ pickPrice: planType[0].getAttribute("value") });
+      changePar({
+        planBcolor: document.querySelector(".bcolor .txt p:first-of-type"),
+      });
+    })();
   };
 };

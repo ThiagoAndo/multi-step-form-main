@@ -12,15 +12,6 @@ export const addPrice = document.querySelectorAll(".prc1");
 export const block = document.querySelector("#container > div:first-of-type");
 export const planBtn = document.getElementById("btn");
 export const finalPrice = document.querySelector(".prc3");
-export const planBtnInside = document.querySelector(
-  "#planCont > #holdBtn > #btn > div"
-);
-export const monthly = document.querySelector(
-  "#planCont > #holdBtn > div:first-of-type"
-);
-export const yerly = document.querySelector(
-  "#planCont > #holdBtn> div:last-of-type"
-);
 export const price = document.querySelectorAll(".planType .txt p:nth-child(2)");
 export const visible = document.querySelectorAll(".yerlyVisible");
 export const planType = document.querySelectorAll(".value");
@@ -28,10 +19,10 @@ export const finalSum = document.querySelectorAll(".prc2");
 export const finalChange = document.querySelector("a");
 export const checBox = document.querySelectorAll(".cheBox > input");
 export const checBoxDiv = document.querySelectorAll(".boxJs");
-export const priceRangeYear = ["$90/yr", "$120/yr", "$150/yr"];
-export const priceRangeMonth = ["$9/mo", "$12/mo", "$15/mo"];
-export const priceRangeYearAdds = ["$10/yr", "$20/yr", "$20/yr"];
-export const priceRangeMonthAdds = ["$1/mo", "$2/mo", "$2/mo"];
+export const priceRangeYear = { 0: "$90/yr", 1: "$120/yr", 2: "$150/yr" };
+export const priceRangeMonth = { 0: "$9/mo", 1: "$12/mo", 2: "$15/mo" };
+export const priceRangeYearAdds = { 0: "$10/yr", 1: "$20/yr", 2: "$20/yr" };
+export const priceRangeMonthAdds = { 0: "$1/mo", 1: "$2/mo", 2: "$2/mo" };
 export const steps = document.querySelectorAll(".onliDesk");
 export const x = window.matchMedia("(max-width: 441px)");
 export const valueExp = new RegExp(
@@ -44,6 +35,20 @@ export const msg3 = "Make sure to enter a valid Phone Number.";
 export const msg4 = "Make sure to fill in the form.";
 export const msg5 =
   "Are you sure you do not want to enhance your gaming experience?";
+const planBtnInside = document.querySelector(
+  "#planCont > #holdBtn > #btn > div"
+);
+const monthly = document.querySelector(
+  "#planCont > #holdBtn > div:first-of-type"
+);
+const yerly = document.querySelector("#planCont > #holdBtn> div:last-of-type");
+export const myObj = {
+  0: { 0: planBtnInside, 1: "transEfect" },
+  1: { 1: monthly, 2: "color" },
+  2: { 2: yerly, 3: "color" },
+};
+
+export let prcTimes = 0;
 export let testPho = false;
 export let confIndex = false;
 export let left = 0;
@@ -56,12 +61,10 @@ export let mORy = "mo";
 export let name = "";
 export let email = "";
 export let last = "(Montly)";
-export let checkReturn = true;
 export let pass = false;
-export let myReturn = [false, false, false];
-let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 export let choseCheck = [];
 // let doneResizing = null;
+let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 export const changePar = (obj = {}) => {
   left = obj.left || left;
@@ -74,8 +77,9 @@ export const changePar = (obj = {}) => {
   name = obj.name || name;
   email = obj.email || email;
   last = obj.last || last;
+  prcTimes = obj.prcTimes || prcTimes;
   pass = email.match(match) == null ? 1 : 2;
-  confIndex = name.indexOf(" ") < 0 == true ? 1 : 2;
+  confIndex = name.includes(" ");
   testPho = valueExp.test(formVal[2].value) == false ? 1 : 2;
   //   doneResizing = obj.doneResizing || doneResizing;
   //   choseCheck = obj.choseCheck || choseCheck;

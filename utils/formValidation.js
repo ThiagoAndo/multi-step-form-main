@@ -18,7 +18,7 @@ import { printMessagge } from "./printMessage.js";
 export const formValidation = () => {
   const checkName = () => {
     changePar({ name: formVal[0].value });
-    confIndex == 1 ? printMessagge(msg1, 0) : (myReturn[0] = true);
+    confIndex == false ? printMessagge(msg1, 0) : (myReturn[0] = true);
     return myReturn[0];
   };
 
@@ -56,9 +56,9 @@ export const formValidation = () => {
     }
   };
 
-  if (click > 0) {
-    return true;
-  } else {
-    return checkEmpty();
-  }
+    if (click > 0) {
+      return true;
+    } else {
+      return checkEmpty();
+    }
 };

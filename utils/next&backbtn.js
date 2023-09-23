@@ -56,7 +56,7 @@ export const bntsEvt = () => {
     }
   };
 
-  const  myConditionBackBtn =()=> {
+  const myConditionBackBtn = () => {
     switch (click) {
       case 1:
         btn2.style.color = "hsl(0, 0%, 100%)";
@@ -73,7 +73,7 @@ export const bntsEvt = () => {
       default:
         console.log("Something went wrong!");
     }
-  }
+  };
   const setValNextBtn = () => {
     changePar({ click: click + 1 });
     changePar({ left: left + leftL });
@@ -98,9 +98,9 @@ export const bntsEvt = () => {
     }
   };
 
-  const backBtn = ()=> {
+  const backBtn = () => {
     btn2.addEventListener("click", myConditionBackBtn);
-  }
+  };
 
   finalChange.onclick = (event) => {
     event.preventDefault();

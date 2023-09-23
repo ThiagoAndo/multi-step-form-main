@@ -358,7 +358,7 @@ ul {
   color: black;
   border-radius: 10px;
   top: -200px;
-  background-color:darkgray;
+  background-color: darkgray;
   border: ridge 2px black;
   z-index: 150;
   transition: 1.5s;
@@ -387,7 +387,7 @@ ul {
 /******************JS Dom Manipulation*****************/
 .message {
   display: flex;
-  top: 250px;
+  top: 180px;
   z-index: 100;
   opacity: 100;
 }
