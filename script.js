@@ -3,7 +3,6 @@
 import {
   form,
   finalPrice,
-  planType,
   finalSum,
   checBoxDiv,
   steps,
@@ -15,27 +14,16 @@ import {
   mORy,
   last,
   choseCheck,
+  changePar,
 } from "./utils/variables.js";
 
 import { bntsEvt } from "./utils/next&backbtn.js";
-import { changePar } from "./utils/variables.js";
 import { yearOrMonth } from "./utils/yearMonthBtn.js";
+import { evtPlanType } from "./utils/evtPlanType.js";
 let doneResizing = null;
 bntsEvt();
 yearOrMonth();
-
-(function () {
-  planType.forEach((plan) => {
-    plan.addEventListener("click", function () {
-      for (var i = 0; i < planType.length; i++) {
-        planType[i].classList.remove("bcolor");
-      }
-      changePar({ pickPrice: this.getAttribute("value") });
-      plan.classList.add("bcolor");
-    });
-  });
-})();
-//  End of Plans Type (month or Year)=====================================
+evtPlanType();
 //  Chebox     ===========================================================
 (function () {
   checBoxDiv.forEach((box) => {

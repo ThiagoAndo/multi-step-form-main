@@ -62,6 +62,7 @@ export let name = "";
 export let email = "";
 export let last = "(Montly)";
 export let pass = false;
+export let myReturn = [false, false, false];
 export let choseCheck = [];
 // let doneResizing = null;
 let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
