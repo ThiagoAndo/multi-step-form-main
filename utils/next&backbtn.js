@@ -88,7 +88,7 @@ export const bntsEvt = () => {
   };
 
   btn.onclick = () => {
-    if (click < formLen.length - 2 && true) {
+    if (click < formLen.length - 2 && formValidation()) {
       pageNumBackGround(click, 1);
       setValNextBtn();
       myConditionNextBtn();
