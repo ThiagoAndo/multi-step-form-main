@@ -1,7 +1,5 @@
 //Changin page's background number when user click on next and back buttons
-
 import { pagNum } from "./variables.js";
-
 export const pageNumBackGround = (cllickNum, call) => {
   switch (call) {
     case 2:

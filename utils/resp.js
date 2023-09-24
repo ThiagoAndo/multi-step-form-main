@@ -7,8 +7,7 @@ import {
   changePar,
   doneResizing,
 } from "./variables.js";
-
-export const responsive = () => {
+export const adjustScreen = () => {
   window.addEventListener("resize", function () {
     this.clearTimeout(doneResizing);
     changePar({
@@ -22,16 +21,13 @@ export const responsive = () => {
     if (maxWidth.matches) {
       displayTxt("none");
       changePar({ leftL: 350 });
-
       resizing();
     } else {
       displayTxt("block");
       changePar({ leftL: 500 });
-
       resizing();
     }
   }
-
   function resizing() {
     changePar({ left: click * leftL });
     form.style.left = "-" + click * leftL + "px";

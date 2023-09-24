@@ -1,7 +1,6 @@
-/* In this module I have added the interaction of the Monthly or
- Yearly, next, back buttons. Also, the linck change that is 
- located on the last step of the form.  */
-
+/* In this module I have added the interaction for the (Monthly or Yearly),
+ next and back buttons. Also, the linck [change] that is 
+ located on the last step of the form.*/
 import {
   btn,
   form,
@@ -21,7 +20,6 @@ import { pageNumBackGround } from "./numColor.js";
 import { formValidation } from "./formValidation.js";
 import { printMessagge } from "./printMessage.js";
 import { setFinalPrice } from "./finalPrice.js";
-
 export const bntsEvt = () => {
   function myCheck() {
     for (var i = 0; i < checBox.length; i++) {
@@ -32,7 +30,6 @@ export const bntsEvt = () => {
       }
     }
   }
-
   const myConditionNextBtn = () => {
     switch (click) {
       case 1:
@@ -55,7 +52,6 @@ export const bntsEvt = () => {
         console.log("Something went wrong!");
     }
   };
-
   const myConditionBackBtn = () => {
     switch (click) {
       case 1:
@@ -79,14 +75,12 @@ export const bntsEvt = () => {
     changePar({ left: left + leftL });
     form.style.left = "-" + `${left}` + "px";
   };
-
   const setValBackBtn = () => {
     changePar({ left: left - leftL });
     form.style.left = "-" + `${left}` + "px";
     changePar({ click: click - 1 });
     pageNumBackGround(click, 2);
   };
-
   btn.onclick = () => {
     if (click < formLen.length - 2 && formValidation()) {
       pageNumBackGround(click, 1);
@@ -97,11 +91,9 @@ export const bntsEvt = () => {
       btnSection.className = "display";
     }
   };
-
   const backBtn = () => {
     btn2.addEventListener("click", myConditionBackBtn);
   };
-
   finalChange.onclick = (event) => {
     event.preventDefault();
     for (var i = 0; i < 2; i++) {

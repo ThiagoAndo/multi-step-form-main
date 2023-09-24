@@ -6,13 +6,11 @@ import {
   disp,
   changePar,
 } from "./variables.js";
-
 export const getAtrr = (obj = {}) => {
   changePar({ atrr: obj[0].getAttribute("value") });
   changePar({ cBox: document.getElementById(atrr) });
   changePar({ disp: document.querySelector("." + cBox.name) });
 };
-
 export const evtCheckBox = () => {
   checBoxDiv.forEach((box) => {
     box.addEventListener("click", function () {

@@ -79,7 +79,6 @@ export const yearOrMonth = () => {
         p.style.display = par;
       });
     };
-
     (function () {
       if (click2 == 1) {
         changeClases(myObj, "block", 3);
@@ -91,7 +90,6 @@ export const yearOrMonth = () => {
         changePar({ click2: 1 });
       }
     })();
-
     function changePrice() {
       switch (click2) {
         case 1:

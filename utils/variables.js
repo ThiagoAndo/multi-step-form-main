@@ -68,11 +68,7 @@ export let atrr;
 export let cBox;
 export let disp;
 export let doneResizing;
-
-// let doneResizing = null;
 let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-
 export const changePar = (obj = {}) => {
   left = obj.left || left;
   click = obj.click || click;
@@ -92,6 +88,4 @@ export const changePar = (obj = {}) => {
   pass = email.match(match) == null ? 1 : 2;
   confIndex = name.includes(" ");
   testPho = valueExp.test(formVal[2].value) == false ? 1 : 2;
-  //   doneResizing = obj.doneResizing || doneResizing;
-  //   choseCheck = obj.choseCheck || choseCheck;
 };
