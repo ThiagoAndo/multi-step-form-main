@@ -47,7 +47,7 @@ export const myObj = {
   1: { 1: monthly, 2: "color" },
   2: { 2: yerly, 3: "color" },
 };
-
+export const finalPlan = document.querySelector("#arcade");
 export let prcTimes = 0;
 export let testPho = false;
 export let confIndex = false;
@@ -67,6 +67,8 @@ export let choseCheck = [];
 export let atrr;
 export let cBox;
 export let disp;
+export let doneResizing;
+
 // let doneResizing = null;
 let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -86,6 +88,7 @@ export const changePar = (obj = {}) => {
   atrr = obj.atrr || atrr;
   cBox = obj.cBox || cBox;
   disp = obj.disp || disp;
+  doneResizing = obj.doneResizing || doneResizing;
   pass = email.match(match) == null ? 1 : 2;
   confIndex = name.includes(" ");
   testPho = valueExp.test(formVal[2].value) == false ? 1 : 2;

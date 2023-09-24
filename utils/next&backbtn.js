@@ -20,7 +20,7 @@ import {
 import { pageNumBackGround } from "./numColor.js";
 import { formValidation } from "./formValidation.js";
 import { printMessagge } from "./printMessage.js";
-import { setFinalPrice } from "../script.js";
+import { setFinalPrice } from "./finalPrice.js";
 
 export const bntsEvt = () => {
   function myCheck() {
