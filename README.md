@@ -39,23 +39,19 @@ Users should be able to:
 #### Mobile
 </br>
 <p align="center">
-    <img src="./screenshots/Mob1.PNG" alt="Material Bread logo">
-</p>
-</br
-><p align="center">
-    <img src="./screenshots/Mob2.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Mob2.PNG" alt="Mobile Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Mob3.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Mob3.PNG" alt="Mobile Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Mob4.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Mob4.PNG" alt="Mobile Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Mob5.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Mob5.PNG" alt="Mobile Version Picture">
 </p>
 </br>
 </br>
@@ -63,22 +59,22 @@ Users should be able to:
 #### Desktop
 </br>
 <p align="center">
-    <img src="./screenshots/Desk1.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Desk1.PNG" alt="Desktop Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Desk2.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Desk2.PNG" alt="Desktop Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Desk3.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Desk3.PNG" alt="Desktop Version Picture">
 </p>
 </br>
 <p align="center">
-    <img src="./screenshots/Desk4.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Desk4.PNG" alt="Desktop Version Picture">
 </p>
 <p align="center">
-    <img src="./screenshots/Desk5.PNG" alt="Material Bread logo">
+    <img src="./screenshots/Desk5.PNG" alt="Desktop Version Picture">
 </p>
 </br>
 
