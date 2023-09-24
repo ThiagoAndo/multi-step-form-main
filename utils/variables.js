@@ -64,8 +64,12 @@ export let last = "(Montly)";
 export let pass = false;
 export let myReturn = [false, false, false];
 export let choseCheck = [];
+export let atrr;
+export let cBox;
+export let disp;
 // let doneResizing = null;
 let match = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 
 export const changePar = (obj = {}) => {
   left = obj.left || left;
@@ -79,6 +83,9 @@ export const changePar = (obj = {}) => {
   email = obj.email || email;
   last = obj.last || last;
   prcTimes = obj.prcTimes || prcTimes;
+  atrr = obj.atrr || atrr;
+  cBox = obj.cBox || cBox;
+  disp = obj.disp || disp;
   pass = email.match(match) == null ? 1 : 2;
   confIndex = name.includes(" ");
   testPho = valueExp.test(formVal[2].value) == false ? 1 : 2;

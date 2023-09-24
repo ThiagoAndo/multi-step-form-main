@@ -4,7 +4,6 @@ import {
   form,
   finalPrice,
   finalSum,
-  checBoxDiv,
   steps,
   x,
   click,
@@ -20,33 +19,16 @@ import {
 import { bntsEvt } from "./utils/next&backbtn.js";
 import { yearOrMonth } from "./utils/yearMonthBtn.js";
 import { evtPlanType } from "./utils/evtPlanType.js";
+import { evtCheckBox } from "./utils/evtCheBox.js";
 let doneResizing = null;
+
 bntsEvt();
 yearOrMonth();
 evtPlanType();
-//  Chebox     ===========================================================
-(function () {
-  checBoxDiv.forEach((box) => {
-    box.addEventListener("click", function () {
-      const atrr = this.getAttribute("value");
-      const atrrName = document.getElementById(atrr);
-      const disp = document.querySelector("." + atrrName.name);
-      const cBox = document.getElementById(atrr);
+evtCheckBox();
 
-      if (atrrName.checked === false) {
-        choseCheck.push(atrrName.value);
-        box.classList.add("dcolor");
-        disp.classList.remove("display");
-        cBox.checked = true;
-      } else {
-        box.classList.remove("dcolor");
-        disp.classList.add("display");
-        choseCheck.splice(choseCheck.indexOf(atrrName.value), 1);
-        cBox.checked = false;
-      }
-    });
-  });
-})();
+//  Chebox     ===========================================================
+
 export function setFinalPrice() {
   let finalPlan = document.querySelector("#arcade");
   finalPlan.innerHTML = planBcolor.innerHTML + " " + last;

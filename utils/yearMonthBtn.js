@@ -17,9 +17,10 @@ import {
   choseCheck,
   prcTimes,
   myObj,
+  disp,
 } from "./variables.js";
 import { changePar } from "./variables.js";
-
+import { getAtrr } from "./evtCheBox.js";
 export const yearOrMonth = () => {
   changePar({ prcTimes: 0 });
   planBtn.onclick = () => {
@@ -31,9 +32,7 @@ export const yearOrMonth = () => {
       box.checked = false;
     });
     checBoxDiv.forEach((box) => {
-      let atrr = box.getAttribute("value");
-      let atrrName = document.getElementById(atrr);
-      let disp = document.querySelector("." + atrrName.name);
+      getAtrr({ 0: box });
       disp.classList.add("display");
       box.classList.remove("dcolor");
     });
