@@ -17,7 +17,7 @@ import {
   changePar,
   msg5,
 } from "./variables.js";
-import { pageNumBackGround } from "./NumberBackColor.js";
+import { pageNumBackGround } from "./numColor.js";
 import { formValidation } from "./formValidation.js";
 import { printMessagge } from "./printMessage.js";
 import { setFinalPrice } from "../script.js";
