@@ -98,6 +98,7 @@ Users should be able to:
 - Java Script
 
 ### What I learned
+
 <div style="text-align: justify">
     I chose the Multi-step form challenge because it seemed to have a reasonable demand for coding. I love coding!
 I built this web page using pure Java script and its features like modules, and arrow functions to make the code readable and easy to change. JS is an easy and enjoyable program language to code with. The downside of programming with it is that the commands can get a little verbose. That's why most programmers still use libraries such as JQuery.
@@ -109,23 +110,45 @@ By completing this great challenge, I got to learn how to test the functionaliti
 
 ## Code
 
-
 All the code were spread trough ten modules plus the main script [script.js]
 <br/>
 
 ### Modules
 
+- [Main script](#main-script)
 - [Variables](#module-variables)
 - [Form validation](#module-form-validation)
-- [Buttons interaction](#module-buttons-interaction )
+- [Buttons interaction](#module-buttons-interaction)
 - [Change Backgound](#module-num-colour)
-- [Print message](#module-print-message) 
+- [Print message](#module-print-message)
 - [Year month button](#module-year-month)
 - [Plan type](#module-evt-plan-type)
 - [Adjust screen](#module-adjust-screen)
 - [Final Price](#module-set-final-price)
 
-### Module-Variables 
+### Main-Script
+
+<div style="text-align: justify">
+The main script will connect the HTML file and all the JS modules to be handled by the browser. 
+</div>
+<br/>
+
+```js
+"use strict";
+import { btnsEvt } from "./utils/next&backbtn.js";
+import { yearOrMonth } from "./utils/yearMonthBtn.js";
+import { evtPlanType } from "./utils/evtPlanType.js";
+import { evtCheckBox } from "./utils/evtCheBox.js";
+import { adjustScreen } from "./utils/resp.js";
+btnsEvt();
+yearOrMonth();
+evtPlanType();
+evtCheckBox();
+adjustScreen();
+```
+
+### Module-Variables
+
 <br/>
 <div style="text-align: justify">
  The feature module of JS does not allow to change variable's value through modules. It transforms a let variable into a const variable. As I wanted to keep all variables in one place, the solution is creating a function [changePar] to change the variable's value on the variables module. 
@@ -225,15 +248,14 @@ export const changePar = (obj = {}) => {
   confIndex = name.includes(" ");
   testPho = valueExp.test(formVal[2].value) == false ? 1 : 2;
 };
-
 ```
+
 ### Module-Form-Validation
 
 <div style="text-align: justify">
 The form validation function will be strict and make all the checks to prevent the user from forgetting to enter important data or entering an incorrect value to the form, making sure that no faulty data will be add to the database and making it easier for the back and code to do their respective validation. The first procedure of the form validation function is to check if all the fields are done. If, the user forgets one of the fields, it will send a message saying what is messing. Then, when the form is complete, it will start the validadion of the data passed.
 </div>
 <br/>
-
 
 ```js
 import {
@@ -290,17 +312,16 @@ export const formValidation = () => {
       }
     }
   };
-    if (click > 0) {
-      return true;
-    } else {
-      return checkEmpty();
-    }
+  if (click > 0) {
+    return true;
+  } else {
+    return checkEmpty();
+  }
 };
-
 ```
 
+### Module-Buttons-Interaction
 
-### Module-Buttons-Interaction 
 <div style="text-align: justify">
 The solution I initially found to this challenge was to put the entire HTML content of the form in a list tag and display it vertically. So, the function [btnEvt] will add functionality to the buttons [Next step, Go back] and the link [change]. They will manipulate the Dom by skipping the list to the left or right of the screen.
 </div>
@@ -408,8 +429,8 @@ export const btnsEvt = () => {
     }
   };
 };
-
 ```
+
 ### Module-Num-Colour
 
 <div style="text-align: justify">
@@ -432,6 +453,7 @@ export const pageNumBackGround = (cllickNum, call) => {
   }
 };
 ```
+
 ## Module-Print-Message
 
 <div style="text-align: justify">
@@ -440,7 +462,6 @@ export const pageNumBackGround = (cllickNum, call) => {
 <br/>
 
 ```js
-
 import { formVal, infoBox, infoBoxMess, block, myReturn } from "./variables.js";
 export const printMessagge = (msg, num) => {
   infoBox.classList.add("message");
@@ -453,14 +474,14 @@ export const printMessagge = (msg, num) => {
   const removeEvtWindow = () => {
     window.removeEventListener("click", evtCloseScreen);
   };
-  const  evtCloseScreen = () => {
+  const evtCloseScreen = () => {
     infoBox.className = "print";
     block.classList.remove("blockFrom");
     if (num != undefined) {
       formVal[num].focus();
     }
     removeEvtWindow();
-  }
+  };
 };
 ```
 
@@ -589,9 +610,10 @@ export const yearOrMonth = () => {
     })();
   };
 };
-
 ```
+
 ## Module-Evt-Plan-Type
+
 <div style="text-align: justify">
 The [evtPlanType] function will highlight the plan chosen by changing the background colour. Also, it will store the price of the plan in an array for the final sum.
 </div>
@@ -610,7 +632,6 @@ export const evtPlanType = () => {
     });
   });
 };
-
 ```
 
 ## Module-Evt-Check-Box
@@ -652,10 +673,10 @@ export const evtCheckBox = () => {
     });
   });
 };
-
 ```
 
 ## Module-Adjust-Screen
+
 <div style="text-align: justify">
 The [adjustScreen] adjusts the position of the HTML list and displays the actual step of the form when the screen is resized to a smaller or larger size. This function is more to test the web page while building it. However, it is very satisfying to see the JS repositioning the form.
 </div>
@@ -703,10 +724,10 @@ export const adjustScreen = () => {
   }
   clearTimeout(doneResizing);
 };
-
 ```
 
 ### Module-Set-Final-Price
+
 <div style="text-align: justify">
 The [setFinalPrice] function will sum up all the services chosen by the user and display them in step four of the form, where the user will get all the data from the previous steps displayed and check and confirm their purchase.
 </div>
@@ -731,8 +752,8 @@ export function setFinalPrice() {
   }, 0);
   finalSum[3].innerHTML = "+$" + `${total + Number(pickPrice)}/${mORy}`;
 }
-
 ```
+
 ### Continued development
 
 It is well known that working with dates and strings is not a simple task. It demands the good expertise of the programmer. It is much simpler to perform form validation using the functionalities of HTML 5 (required). However, programming a form validation using a programming language gives more control over what is required from the user. By having to identify the characters typed by the user, I realize the necessity to increase my knowledge of understading regular expressions better. The next step is to get a better grasp of it.
