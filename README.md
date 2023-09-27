@@ -126,7 +126,7 @@ All the code were spread trough ten modules plus the main script [script.js]
 - [Final Price](#module-set-final-price)
 
 ### Module-Variables 
-
+<br/>
 <div style="text-align: justify">
  The feature module of JS does not allow to change variable's value through modules. It transforms a let variable into a const variable. As I wanted to keep all variables in one place, the solution is creating a function [changePar] to change the variable's value on the variables module. 
 </div>
@@ -415,6 +415,7 @@ export const btnsEvt = () => {
 <div style="text-align: justify">
  The [pageNumBackGround] function will indicate to the user which page of the form they are by changing the background colour of the circles on the page as they press the buttons to skip forwards or backwards. 
 </div>
+<br/>
 
 ```js
 import { pagNum } from "./variables.js";
@@ -436,6 +437,7 @@ export const pageNumBackGround = (cllickNum, call) => {
 <div style="text-align: justify">
  The [pageNumBackGround] function will indicate to the user which page of the form they are by changing the background colour of the circles on the page as they press the buttons to skip forwards or backwards. 
 </div>
+<br/>
 
 ```js
 
@@ -467,6 +469,7 @@ export const printMessagge = (msg, num) => {
 <div style="text-align: justify">
  The [yearOrMonth] function will change the plans and add on prices. The button is built with JS and CSS transition animation. Also, it will empty all the data from the user's choice already in storage. If, before confirmation of purchase, the user decides to change from a monthly to an anual plan, they will have to select services again.
 </div>
+<br/>
 
 ```js
 import {
@@ -592,7 +595,7 @@ export const yearOrMonth = () => {
 <div style="text-align: justify">
 The [evtPlanType] function will highlight the plan chosen by changing the background colour. Also, it will store the price of the plan in an array for the final sum.
 </div>
-
+<br/>
 
 ```js
 import { changePar, planType } from "./variables.js";
@@ -615,6 +618,7 @@ export const evtPlanType = () => {
 <div style="text-align: justify">
 The [evtCheckBox] function will highlight the add-on service chosen by the user by changing the background color and storing the price data on an array. Also, it will erase the data from the array and unmark the add-on if the checkbox is unchecked. 
 </div>
+<br/>
 
 ```js
 import {
@@ -655,6 +659,7 @@ export const evtCheckBox = () => {
 <div style="text-align: justify">
 The [adjustScreen] adjusts the position of the HTML list and displays the actual step of the form when the screen is resized to a smaller or larger size. This function is more to test the web page while building it. However, it is very satisfying to see the JS repositioning the form.
 </div>
+<br/>
 
 ```js
 import {
@@ -705,6 +710,7 @@ export const adjustScreen = () => {
 <div style="text-align: justify">
 The [setFinalPrice] function will sum up all the services chosen by the user and display them in step four of the form, where the user will get all the data from the previous steps displayed and check and confirm their purchase.
 </div>
+<br/>
 
 ```js
 import {
