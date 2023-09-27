@@ -1,4 +1,4 @@
-// Adding event to Cheboxs =================================
+// Adding event to Plans=================================
 import { changePar, planType } from "./variables.js";
 export const evtPlanType = () => {
   planType.forEach((plan) => {

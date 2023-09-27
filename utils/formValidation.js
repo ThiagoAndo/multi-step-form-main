@@ -21,7 +21,6 @@ export const formValidation = () => {
     confIndex == false ? printMessagge(msg1, 0) : (myReturn[0] = true);
     return myReturn[0];
   };
-
   const checkEamil = () => {
     changePar({ email: formVal[1].value });
     pass == 1 ? printMessagge(msg2, 1) : (myReturn[1] = true);
@@ -31,7 +30,6 @@ export const formValidation = () => {
     testPho == 1 ? printMessagge(msg3, 2) : (myReturn[2] = true);
     return myReturn[2];
   };
-
   const checkEmpty = () => {
     if (
       formVal[0].value == "" &&
@@ -55,7 +53,6 @@ export const formValidation = () => {
       }
     }
   };
-
     if (click > 0) {
       return true;
     } else {

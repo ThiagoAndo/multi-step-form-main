@@ -1,10 +1,10 @@
 "use strict";
-import { bntsEvt } from "./utils/next&backbtn.js";
+import { btnsEvt } from "./utils/next&backbtn.js";
 import { yearOrMonth } from "./utils/yearMonthBtn.js";
 import { evtPlanType } from "./utils/evtPlanType.js";
 import { evtCheckBox } from "./utils/evtCheBox.js";
 import { adjustScreen } from "./utils/resp.js";
-bntsEvt();
+btnsEvt();
 yearOrMonth();
 evtPlanType();
 evtCheckBox();

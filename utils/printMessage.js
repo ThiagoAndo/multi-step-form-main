@@ -1,4 +1,4 @@
-//Adding functionality to box message when the form is not fill in properly
+//Adding functionality to window message that will be called by the formValidation function
 import { formVal, infoBox, infoBoxMess, block, myReturn } from "./variables.js";
 export const printMessagge = (msg, num) => {
   infoBox.classList.add("message");

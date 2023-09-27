@@ -16,11 +16,11 @@ import {
   changePar,
   msg5,
 } from "./variables.js";
-import { pageNumBackGround } from "./numColor.js";
+import { pageNumBackGround } from "./numColour.js";
 import { formValidation } from "./formValidation.js";
 import { printMessagge } from "./printMessage.js";
 import { setFinalPrice } from "./finalPrice.js";
-export const bntsEvt = () => {
+export const btnsEvt = () => {
   function myCheck() {
     for (var i = 0; i < checBox.length; i++) {
       if (checBox[i].checked) {
