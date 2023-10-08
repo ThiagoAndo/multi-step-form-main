@@ -153,6 +153,7 @@ ul {
   font-size: 0.7rem;
   color: hsl(213, 96%, 18%);
   line-height: 20px;
+  display: none;
 }
 #border {
   width: 270px;
