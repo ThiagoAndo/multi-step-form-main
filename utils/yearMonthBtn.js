@@ -81,11 +81,11 @@ export const yearOrMonth = () => {
     };
     (function () {
       if (click2 == 1) {
-        changeClases(myObj, "block", 3);
+        changeClases(myObj, "none", 3);
         changePrice();
         changePar({ click2: 2 });
       } else {
-        changeClases(myObj, "none", 7);
+        changeClases(myObj, "block", 7);
         changePrice();
         changePar({ click2: 1 });
       }
