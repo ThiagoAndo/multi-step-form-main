@@ -151,7 +151,7 @@ adjustScreen();
 
 <br/>
 <div style="text-align: justify">
- The feature module of JS does not allow to change variable's value through modules. It transforms a let variable into a const variable. As I wanted to keep all variables in one place, the solution is creating a function [changePar] to change the variable's value on the variables module. 
+ The feature module of JS does not allow to change variable's value through modules. It transforms a let variable into a const variable. As I wanted to keep all variables in one place, the solution was creating a function [changePar] to change the variable's value on the variables module. 
 </div>
 <br/>
 
